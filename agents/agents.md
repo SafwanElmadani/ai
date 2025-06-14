@@ -8,6 +8,7 @@
 ## Frameworks:
 - Langchain (start here)
     - langGraph
+        - used for building, managing, and deploying stateful agents.
     - langchain
     - langSmith
 - CrewAI
