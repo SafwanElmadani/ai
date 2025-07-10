@@ -23,3 +23,6 @@ The MCP protocol is what keeps everything in sync. It defines how the client and
 
 ## SDKs
 - https://github.com/modelcontextprotocol
+
+## Docs
+- https://modelcontextprotocol.io/introduction
