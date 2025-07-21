@@ -17,6 +17,8 @@
 On the other side, an MCP client lives inside the AI assistant or app (like Claude or Cursor). When the AI wants to use a tool, it goes through this client to talk to the matching server.
 - Cursor can use a client to interact with your local development environment.
 - The client handles all the back-and-forth — sending requests, receiving results, and passing them to the AI.
+- Client for testing the server:
+    - https://github.com/modelcontextprotocol/inspector
 
 ## The MCP Protocol
 The MCP protocol is what keeps everything in sync. It defines how the client and server communicate — what the messages look like, how actions are described, and how results are returned
@@ -26,3 +28,4 @@ The MCP protocol is what keeps everything in sync. It defines how the client and
 
 ## Docs
 - https://modelcontextprotocol.io/introduction
+
