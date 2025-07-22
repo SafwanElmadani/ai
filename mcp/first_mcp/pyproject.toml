@@ -7,5 +7,6 @@ requires-python = ">=3.13"
 dependencies = [
     "asyncio>=3.4.3",
     "httpx>=0.28.1",
+    "mcp-cli>=0.5.2",
     "mcp[cli]>=1.12.0",
 ]

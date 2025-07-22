@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "weather": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/safwan/Documents/ai/mcp/first_mcp",
+        "run",
+        "weather.py"
+      ],
+      "env": {
+        "PYTHONWARNINGS": "ignore",
+        "LOG_LEVEL": "WARNING",
+        "CHUK_LOG_LEVEL": "WARNING",
+        "MCP_LOG_LEVEL": "WARNING"
+      }
+    }
+  }
+}
