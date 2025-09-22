@@ -1,0 +1,11 @@
+[project]
+name = "llms-with-transformers"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.12.15",
+    "rich>=14.1.0",
+    "transformers[serving,torch]>=4.56.2",
+]
