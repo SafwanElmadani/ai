@@ -1,0 +1,107 @@
+{
+  "name": "workflow1",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -496,
+        -32
+      ],
+      "id": "c82fa6a0-09f3-43be-9291-6df4df61bf0b",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "format": "imperial",
+        "locationSelection": "zipCode",
+        "zipCode": "85716"
+      },
+      "type": "n8n-nodes-base.openWeatherMap",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        -32
+      ],
+      "id": "4bbbabaf-6fed-43d7-a5fe-1b021b506162",
+      "name": "OpenWeatherMap",
+      "credentials": {
+        "openWeatherMapApi": {
+          "id": "ToEXgkli4QDj1Ly7",
+          "name": "OpenWeatherMap account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "safwanelmadani01@gmail.com",
+        "subject": "Current weather",
+        "emailType": "text",
+        "message": "=Hey, \nHere is the current weather in {{ $json.name }}:  \ntemp: {{ $json.main.temp }} with {{ $json.weather[0].description }}\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -48,
+        -32
+      ],
+      "id": "288184c5-4326-4036-a392-89b3cea5860c",
+      "name": "Send a message",
+      "webhookId": "9c451ca9-882c-4de9-b8ac-449f005df94e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "gAZss5iYjusm82Zz",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "OpenWeatherMap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenWeatherMap": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0e811c19-47ff-478e-9bf4-0abc1a496934",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "697918a8cc09b2b0cf347911b234528f1d14dabe371a2be519178eb9ebdff9e6"
+  },
+  "id": "w7ldGF5Kl5csyFJ0",
+  "tags": []
+}
