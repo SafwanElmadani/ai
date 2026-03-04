@@ -17,9 +17,18 @@
 
 ## Notes
 - To manage context efficiently: the full SKILL.md instructions only when the agent decides to use a skill.
+- view SKILL.md            ← instructions loaded into context
+  bash: python script.py   ← script EXECUTES, but its source code is NOT in context
+  stdout/stderr returned   ← only the OUTPUT enters context
+  - scripts are not loaded into the context. 
+  - Only if Claude explicitly reads them, which it would do if:
+    - It needs to debug the script and reads it with view
+    - The SKILL.md instructs Claude to inspect the script first
+    - You ask Claude to explain or modify the script
 
 
 
 ## resources: 
 - https://agentskills.io/home
 - https://github.com/agentskills/agentskills
+- [what are skills](https://support.claude.com/en/articles/12512176-what-are-skills)
