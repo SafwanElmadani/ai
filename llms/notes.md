@@ -11,6 +11,10 @@
 - Basically, it's a feature to get consistant output from the model and then using that output to call a function.
     - "It’s important to emphasize that when using function calling, the LLM itself does not execute the function. Instead, it identifies the appropriate function, gathers all required parameters, and provides the information in a structured JSON format. This JSON output can then be easily deserialized into a function call in Python (or any other programming language) "
 
+### resources 
+- https://developers.openai.com/api/docs/guides/function-calling
+    - "When we make an API request to the model with a prompt, we can include a list of tools the model could consider using."
+- https://blog.christoolivier.com/p/llms-and-functiontool-calling
 ### function call leaderboard
 - https://gorilla.cs.berkeley.edu/leaderboard.html
 
@@ -18,7 +22,7 @@
 - The instruct model is fine tuned to follow instructions so it can do tasks and answer questions in a natural way. The base model doesn’t do that.
 
 ## Q&A 
-- how the llm know if it has access to a tool or not n8n?
+- how the llm know if it has access to a tool in n8n?
     - It uses Langchain's Tool Calling under the hood.
 - Multi-turn?
 - temperature
@@ -27,3 +31,8 @@
 - qwen3
 - gemma 3 and phi4
 - Granite3.2:8b, granite3.3:8b, gemma3:12b-it-qat
+
+# Note:
+> a model doesnt have to be turned for function calling 
+> but better to have one that is tuned.
+> source: https://www.youtube.com/watch?v=IdPdwQdM9lA
