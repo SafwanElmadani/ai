@@ -201,7 +201,51 @@ skill-name/
 - Use the skills-ref reference library to validate your skills:
     - https://github.com/agentskills/agentskills/tree/main/skills-ref
     - `skills-ref validate ./my-skill`
-
+---
 ## using scripts in skills:
     - https://agentskills.io/skill-creation/using-scripts
+###  One-off commands
+- like python or nodejs tools
+    - you can reference them directly in your SKILL.md
+```md
+uvx ruff@0.8.0 check .
+uvx black@24.10.0 .
+```
+### Referencing scripts from SKILL.md
+- Use relative paths from the skill directory root to reference bundled files. 
+- The agent resolves these paths automatically — no absolute paths needed. 
+- List available scripts in your SKILL.md so the agent knows they exist:
+```md
+    <!-- SKILL.md -->
+    ## Available scripts
+    - **`scripts/validate.sh`** — Validates configuration files
+    - **`scripts/process.py`** — Processes input data
+```
+- Then instruct the agent to run them in the SKILL.md:
+    ```md
+      ## Workflow
+      1. Run the validation script:
+         ```bash
+         bash scripts/validate.sh "$INPUT_FILE"
+         ``` 
+      2. Process the results:
+         ```bash
+         python3 scripts/process.py --input results.json
+         ```
+    ```
+
+### Self-contained scripts
+- When you need reusable logic, bundle a script in scripts/ that declares its own dependencies inline 
+
+### Designing scripts for agentic use
+- When an agent runs your script, it reads **stdout** and **stderr** to decide what to do next. A few design choices make scripts dramatically easier for agents to use.
+    - Avoid interactive prompts
+        - Accept all input via command-line flags, environment variables, or stdin
+    - Document usage with --help
+        - --help output is the primary way an agent learns your script’s interface. Include a brief description, available flags
+    - Write helpful error messages
+    - Use structured output
+        - Prefer structured formats — JSON, CSV, TSV — over free-form text. 
+        - Structured formats can be consumed by both the agent and standard tools (jq, cut, awk), making your script composable in pipelines.
+    - https://agentskills.io/skill-creation/using-scripts#further-considerations
 
