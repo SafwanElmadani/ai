@@ -249,3 +249,7 @@ uvx black@24.10.0 .
         - Structured formats can be consumed by both the agent and standard tools (jq, cut, awk), making your script composable in pipelines.
     - https://agentskills.io/skill-creation/using-scripts#further-considerations
 
+
+## Good reading:
+- https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills
+
