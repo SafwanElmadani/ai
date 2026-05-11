@@ -2,5 +2,6 @@
   "newFileLocation": "root",
   "attachmentFolderPath": "images",
   "useMarkdownLinks": false,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "vimMode": true
 }

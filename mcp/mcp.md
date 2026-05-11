@@ -18,7 +18,7 @@ On the other side, an MCP client lives inside the AI assistant or app (like Clau
 - Cursor can use a client to interact with your local development environment.
 - The client handles all the back-and-forth — sending requests, receiving results, and passing them to the AI.
 - Client for testing the server:
-    - https://github.com/modelcontextprotocol/inspector
+    - https://github.com/modelcont`extprotocol/inspector
 
 ## The MCP Protocol
 The MCP protocol is what keeps everything in sync. It defines how the client and server communicate — what the messages look like, how actions are described, and how results are returned
@@ -28,4 +28,11 @@ The MCP protocol is what keeps everything in sync. It defines how the client and
 
 ## Docs
 - https://modelcontextprotocol.io/introduction
+
+## MCP (Model Context Protocol) defines these transports:
+
+1. stdio — Server runs as a local subprocess; client and server exchange JSON-RPC messages over stdin/stdout. Used
+for local tools (e.g., a local filesystem or git MCP server).
+2. Streamable HTTP — The current standard remote transport. A single HTTP endpoint handles JSON-RPC requests; the server can optionally upgrade responses to Server-Sent Events to stream multiple messages or push notifications back. Replaced the older HTTP+SSE transport.
+3. HTTP + SSE (legacy) — The original remote transport: a POST endpoint for client→server messages plus a separate SSE endpoint for server→client messages. Deprecated in favor of Streamable HTTP but still supported by some implementations for backward compatibility.
 
