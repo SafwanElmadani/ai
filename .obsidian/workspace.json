@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "llms/llm-transformer-study-guide.md",
+                "file": "runtime/inference-engines.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "llm-transformer-study-guide"
+              "title": "inference-engines"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mcp/mcp.md",
+                "file": "runtime/inference-engines.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mcp"
+              "title": "inference-engines"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "a153918ffcc8532e",
@@ -195,11 +194,29 @@
       "bases:Create new base": false
     }
   },
-  "active": "9ea1d23be38695f8",
+  "active": "22dcc4042d3b7609",
   "lastOpenFiles": [
-    "mcp/mcp.md~",
+    "llms/model-format.md",
+    "llms/ai-code-assistants.md",
+    "llms/RAG_fine-turning.md",
+    "runtime/inference-engines.md",
+    "how-to-learn/llm-transformer-study-guide.md",
+    "runtime",
+    "how-to-learn/howtolearnML.md",
+    "README.md",
+    "how-to-learn",
     "lecture-videos.md",
-    "llms/llm-transformer-study-guide.md",
+    "skills/notes.md",
+    "notes/watsonx.md",
+    "notes/ModelsHub.md",
+    "notes/ideas.md",
+    "notes/Foundation_models.md",
+    "notes/data_preprocessing.md",
+    "llms/notes.md",
+    "agents/agent-stack.md",
+    "agents/agents.md",
+    "mcp/mcp.md",
+    "mcp/mcp.md~",
     "agents/claude/claude-with-local-llm.md",
     "images/Pasted image 20260430192353.png",
     "images/Pasted image 20260430190609.png",
@@ -207,15 +224,7 @@
     "agents/local claude.md",
     "agents/images/Pasted image 20260430183856.png",
     "agents/images",
-    "README.md",
     "claude with local LLM.md",
-    "images",
-    "agents/agents.md",
-    "skills/notes.md",
-    "notes/watsonx.md",
-    "notes/ModelsHub.md",
-    "notes/ideas.md",
-    "notes/Foundation_models.md",
-    "notes/data_preprocessing.md"
+    "images"
   ]
 }
